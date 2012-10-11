@@ -1,10 +1,10 @@
 OpenResty_windows
 =========
-OpenResty_windows is [OpenResty](https://github.com/agentzh/openresty)'s windows version.
+OpenResty_windows is [OpenResty](http://openresty.org/)'s windows version.
 
 The purpose of this project is to run openresty in the windows system as soon as possible.  through simple and crude modify some third-party modules in order to adapt to the windows system, however at the same time the modified codes can not be run in linux :( .I will try to submit patches.
 
-__NOTE__: OpenResty_windows not include all modules in [OpenResty](https://github.com/agentzh/openresty).   
+__NOTE__: OpenResty_windows not include all modules in [OpenResty](http://openresty.org/).   
  Now it include: ngx_devel_kit, ngx_coolkit, set-misc-nginx, ngx_lua, echo-nginx, headers-more-nginx, ngx_postgres, rds-json-nginx.   
  You can modify configure cmd to add modules, and possibly need to modify the code ensure compile successfully.
 
