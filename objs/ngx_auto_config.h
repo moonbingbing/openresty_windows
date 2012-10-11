@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --with-cc=cl --builddir=objs --prefix= --add-module=ngx_devel_kit-0.2.17 --add-module=ngx_coolkit-0.2rc1 --add-module=set-misc-nginx-module-0.22rc8 --add-module=ngx_lua-0.5.14 --add-module=echo-nginx-module-0.41 --add-module=headers-more-nginx-module-0.18 --add-module=ngx_postgres-1.0rc1 --add-module=rds-json-nginx-module-0.12rc10 --with-cc-opt=-DFD_SETSIZE=1024 --with-pcre=objs/lib/pcre-8.31 --with-zlib=objs/lib/zlib-1.2.7 --with-openssl=objs/lib/openssl-1.0.1c --with-select_module --with-http_ssl_module"
+#define NGX_CONFIGURE " --with-cc=cl --with-cc-opt=-DFD_SETSIZE=1024 --builddir=objs --prefix= --add-module=ngx_devel_kit-0.2.17 --add-module=ngx_coolkit-0.2rc1 --add-module=set-misc-nginx-module-0.22rc8 --add-module=ngx_lua-0.5.14 --add-module=echo-nginx-module-0.41 --add-module=headers-more-nginx-module-0.18 --add-module=ngx_postgres-1.0rc1 --add-module=rds-json-nginx-module-0.12rc10 --with-pcre=objs/lib/pcre-8.31 --with-zlib=objs/lib/zlib-1.2.7 --with-openssl=objs/lib/openssl-1.0.1c --with-select_module --with-http_ssl_module"
 
 #ifndef NGX_HAVE_AIO
 #define NGX_HAVE_AIO  1

@@ -524,7 +524,7 @@ objs/nginx.exe:	objs/src/core/nginx.obj \
 	objs/addon/src/ngx_http_rds_json_output.obj 
 	objs/addon/src/ngx_http_rds_json_handler.obj 
 	objs/ngx_modules.obj 
-	kernel32.lib user32.lib advapi32.lib ws2_32.lib LuaJIT-2.0.0-beta10/src//lua51.lib ngx_postgres-1.0rc1/src/lib/libpq.lib objs/lib/pcre-8.31/pcre.lib objs/lib/openssl-1.0.1c/openssl/lib/ssleay32.lib objs/lib/openssl-1.0.1c/openssl/lib/libeay32.lib gdi32.lib crypt32.lib objs/lib/zlib-1.2.7/zlib.lib 
+	kernel32.lib user32.lib advapi32.lib ws2_32.lib LuaJIT-2.0.0-beta10/src//lua51.lib ngx_postgres-1.0rc1/src/lib//libpq.lib objs/lib/pcre-8.31/pcre.lib objs/lib/openssl-1.0.1c/openssl/lib/ssleay32.lib objs/lib/openssl-1.0.1c/openssl/lib/libeay32.lib gdi32.lib crypt32.lib objs/lib/zlib-1.2.7/zlib.lib 
 	objs/nginx.res -link -verbose:lib -debug
 	
 <<

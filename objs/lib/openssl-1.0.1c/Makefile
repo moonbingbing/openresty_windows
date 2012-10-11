@@ -12,9 +12,9 @@ SHLIB_VERSION_HISTORY=
 SHLIB_MAJOR=1
 SHLIB_MINOR=0.0
 SHLIB_EXT=
-PLATFORM=VC-WIN32
-OPTIONS=--prefix=openssl no-ec_nistp_64_gcc_128 no-gmp no-jpake no-krb5 no-md2 no-rc5 no-rfc3779 no-sctp no-shared no-store no-zlib no-zlib-dynamic
-CONFIGURE_ARGS=VC-WIN32 no-shared --prefix=openssl
+PLATFORM=dist
+OPTIONS= no-ec_nistp_64_gcc_128 no-gmp no-jpake no-krb5 no-md2 no-rc5 no-rfc3779 no-sctp no-shared no-store no-zlib no-zlib-dynamic static-engine
+CONFIGURE_ARGS=dist
 SHLIB_TARGET=
 
 # HERE indicates where this Makefile lives.  This can be used to indicate
@@ -26,10 +26,10 @@ HERE=.
 # for, say, /usr/ and yet have everything installed to /tmp/somedir/usr/.
 # Normally it is left empty.
 INSTALL_PREFIX=
-INSTALLTOP=openssl
+INSTALLTOP=/usr/local/ssl
 
 # Do not edit this manually. Use Configure --openssldir=DIR do change this!
-OPENSSLDIR=openssl/openssl/ssl
+OPENSSLDIR=/usr/local/ssl
 
 # NO_IDEA - Define to build without the IDEA algorithm
 # NO_RC4  - Define to build without the RC4 algorithm
@@ -59,15 +59,15 @@ OPENSSLDIR=openssl/openssl/ssl
 # equal 4.
 # PKCS1_CHECK - pkcs1 tests.
 
-CC= cl
-CFLAG= -DOPENSSL_THREADS  -DDSO_WIN32 -W3 -Gs0 -GF -Gy -nologo -DOPENSSL_SYSNAME_WIN32 -DWIN32_LEAN_AND_MEAN -DL_ENDIAN -D_CRT_SECURE_NO_DEPRECATE -DOPENSSL_BN_ASM_PART_WORDS -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DMD5_ASM -DRMD160_ASM -DAES_ASM -DVPAES_ASM -DWHIRLPOOL_ASM -DGHASH_ASM
+CC= cc
+CFLAG= -O
 DEPFLAG= -DOPENSSL_NO_EC_NISTP_64_GCC_128 -DOPENSSL_NO_GMP -DOPENSSL_NO_JPAKE -DOPENSSL_NO_MD2 -DOPENSSL_NO_RC5 -DOPENSSL_NO_RFC3779 -DOPENSSL_NO_SCTP -DOPENSSL_NO_STORE
 PEX_LIBS= 
 EX_LIBS= 
 EXE_EXT= 
 ARFLAGS= 
 AR= ar $(ARFLAGS) r
-RANLIB= /mingw/bin/ranlib
+RANLIB= /usr/bin/ranlib
 NM= nm
 PERL= /usr/bin/perl
 TAR= tar
@@ -88,22 +88,22 @@ ASFLAG=$(CFLAG)
 PROCESSOR= 
 
 # CPUID module collects small commonly used assembler snippets
-CPUID_OBJ= x86cpuid.o
-BN_ASM= bn-586.o co-586.o x86-mont.o x86-gf2m.o
-DES_ENC= des-586.o crypt586.o
-AES_ENC= aes-586.o vpaes-x86.o aesni-x86.o
-BF_ENC= bf-586.o
-CAST_ENC= cast-586.o
-RC4_ENC= rc4-586.o
-RC5_ENC= rc5-586.o
-MD5_ASM_OBJ= md5-586.o
-SHA1_ASM_OBJ= sha1-586.o sha256-586.o sha512-586.o
-RMD160_ASM_OBJ= rmd-586.o
-WP_ASM_OBJ= wp_block.o wp-mmx.o
-CMLL_ENC= cmll-x86.o
-MODES_ASM_OBJ= ghash-x86.o
+CPUID_OBJ= mem_clr.o
+BN_ASM= bn_asm.o
+DES_ENC= des_enc.o fcrypt_b.o
+AES_ENC= aes_core.o aes_cbc.o
+BF_ENC= bf_enc.o
+CAST_ENC= c_enc.o
+RC4_ENC= rc4_enc.o rc4_skey.o
+RC5_ENC= rc5_enc.o
+MD5_ASM_OBJ= 
+SHA1_ASM_OBJ= 
+RMD160_ASM_OBJ= 
+WP_ASM_OBJ= wp_block.o
+CMLL_ENC= camellia.o cmll_misc.o cmll_cbc.o
+MODES_ASM_OBJ= 
 ENGINES_ASM_OBJ= 
-PERLASM_SCHEME= win32n
+PERLASM_SCHEME= 
 
 # KRB5 stuff
 KRB5_INCLUDES=
